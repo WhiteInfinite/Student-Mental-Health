@@ -7,8 +7,10 @@ The goal of this project is to predict whether a student is at risk of mental il
 Mental health challenges among students are increasingly prevalent due to various pressures from academic, social, and financial aspects of student life. By developing a data-driven approach, this project hopes to identify students at a higher risk of mental health issues. A predictive model that flags these risks can serve as a supplementary tool for mental health professionals in educational institutions, allowing them to focus support efforts on students who may be in need.
 
 # 2. Data Collection
-## Data Source: ChatGPT
-## Dataset Description:  The dataset comprises 300 entries, with each entry containing features related to a student’s demographics, lifestyle, and academic experience. The key features include:
+## Data Source:
+ChatGPT
+## Dataset Description:
+The dataset comprises 300 entries, with each entry containing features related to a student’s demographics, lifestyle, and academic experience. The key features include:
 •	Age
 •	Gender
 •	Academic Performance
@@ -22,21 +24,26 @@ Mental health challenges among students are increasingly prevalent due to variou
 •	Academic Pressure (self-reported on a scale)
 •	Social Media Use
 •	Access to Mental Health Support
-## Target variable:  Diagnosed Mental Illness (binary value), indicates whether a student has been identified with a mental health condition.
+## Target variable:
+Diagnosed Mental Illness (binary value), indicates whether a student has been identified with a mental health condition.
 
 # 3. Exploratory Data Analysis (EDA)	
-## Summary Statistics: Mean, median, and distribution of each feature.
+## Summary Statistics:
+Mean, median, and distribution of each feature.
 
 ## Visualizations:
 - Histograms to assess the distribution of each variable. 
 - Correlation bar graph to understand relationships between the various features and mental illness .
 
-## Insights:  Accurate predictions about the likelihood of a student being diagnosed with mental illness. 
+## Insights: 
+Accurate predictions about the likelihood of a student being diagnosed with mental illness. 
 
 # 4. Data Preprocessing
-## Encoding Categorical Variables: One-hot encoding for any categorical features.
+## Encoding Categorical Variables:
+One-hot encoding for any categorical features.
 
-## Feature Scaling: The dataset contains features with different scales, so standardization is applied to ensure consistency, particularly for models sensitive to feature scales.
+## Feature Scaling: 
+The dataset contains features with different scales, so standardization is applied to ensure consistency, particularly for models sensitive to feature scales.
 
 # 5. Machine Learning Model Selection
 ## Model Choices:
@@ -44,14 +51,16 @@ Mental health challenges among students are increasingly prevalent due to variou
 - Random Forest Classifier (can capture complex interactions among features).
 - Support Vector Machine (SVM) can handle data through kernel transformations.
 
-## Why Scikit-Learn: Easy implementation, variety of algorithms, and effective performance metrics.
+## Why Scikit-Learn: 
+Easy implementation, variety of algorithms, and effective performance metrics.
 
 ## Evaluation Metric:
 - Accuracy: This metric assesses the overall rate of correct predictions across the test set.
 - Confusion Matrix: Offers insight to analyze model performance in identifying high-risk students.
 
 # 6. Model Implementation
-## Data Splitting: Split dataset into 80% training and 20% testing sets using `train_test_split` from Scikit-Learn.
+## Data Splitting: 
+Split dataset into 80% training and 20% testing sets using `train_test_split` from Scikit-Learn.
 
 ## Hyperparameter Tuning:
 Grid search or randomized search can be applied for SVM (e.g., adjusting kernel type and regularization), Random Forest (e.g., tuning the number of trees and depth), and Neural Network (e.g., optimizing layer sizes and learning rates).
@@ -109,7 +118,8 @@ grid_search.fit(X_train_scaled, y_train)
 
 ## Feature Importance:
 - Insights into which factors (e.g., family support, financial stress) are most predictive of mental health issues, guiding the development of targeted interventions.
-## Confusion Matrix: Visualized true vs. predicted values to identify common misclassifications.
+## Confusion Matrix: 
+Visualized true vs. predicted values to identify common misclassifications.
 
 # 8. Conclusion and Future Work
 Machine learning models effectively predict the likelihood of a student being diagnosed with mental illness, with an emphasis on how much each feature contribute to the development of mental illness. The project demonstrates potential threats for mental illness in students.
