@@ -65,51 +65,6 @@ Split dataset into 80% training and 20% testing sets using `train_test_split` fr
 ## Hyperparameter Tuning:
 Grid search or randomized search can be applied for SVM (e.g., adjusting kernel type and regularization), Random Forest (e.g., tuning the number of trees and depth), and Neural Network (e.g., optimizing layer sizes and learning rates).
 
-## Code Example:
-from sklearn.model_selection import train_test_split 
-from sklearn.ensemble import RandomForestClassifier 
-from sklearn.decomposition import PCA
-from sklearn.model_selection import GridSearchCV
-from sklearn.svm import SVC
-from sklearn.metrics import ConfusionMatrixDisplay
-from sklearn.metrics import f1_score,accuracy_score
-
-**Splitting the data**
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 20)
-
-**To display the Confusion Matrix**
-ConfusionMatrixDisplay.from_predictions(
-    y_test, y_pred
-)
-**To find the accuracy score and f1 score of the predicted dataset**
-accuracy_score(y_test, y_pred)
-f1_score(y_test, y_pred)
-
-**Hyperparameter tuning for Neural Network Classifier**
-class SimpleNN(nn.Module):
-    def __init__(self, input_size):
-        super(SimpleNN, self).__init__()
-        self.fc1 = nn.Linear(input_size, 16)  # First hidden layer with 16 neurons
-        self.fc2 = nn.Linear(16, 8)            # Second hidden layer with 8 neurons
-        self.fc3 = nn.Linear(8, 2)             # Output layer with 2 classes
-    def forward(self, x):
-        x = torch.relu(self.fc1(x))
-        x = torch.relu(self.fc2(x))
-        x = self.fc3(x)
-        return x
-
-**Hyperparameter tuning for Random Forest Classifier**
-classifier = RandomForestClassifier(n_estimators=100, random_state=42)
-classifier.fit(X_train_scaled, y_train)
-
-**Hyperparameter tuning for SVM**
-param_grid = {
-    'C': [0.1, 1, 10, 100],
-    'gamma': ['scale', 'auto', 0.01, 0.1, 1],
-    'kernel': ['linear', 'rbf']
-}
-grid_search = GridSearchCV(SVC(probability=True), param_grid, cv=5)
-grid_search.fit(X_train_scaled, y_train)
 
 # 7. Results and Evaluation
 ## Model Performance:
